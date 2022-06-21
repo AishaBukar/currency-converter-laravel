@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\currencyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [currencyController::class, 'index']);
+
+Route::post('/convert', [currencyController::class, 'convert']);
